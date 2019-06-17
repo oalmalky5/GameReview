@@ -27,6 +27,13 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#simple form gem
+gem 'simple_form', '~> 4.1'
+#bootstrap sass for styling
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+#authintication gem
+gem 'devise', '~> 4.6', '>= 4.6.2'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
