@@ -1,6 +1,9 @@
-<%= simple_form_for @game do |f| %>
+<%= simple_form_for @game, :html => { :multipart => true  } do |f| %>
+    <%= select_tag(:genre_id, options_for_select(@genres), :prompt => "Select Genre") %>
     <%= f.input :title, label: "Game Title" %>
     <%= f.input :description %>
     <%= f.input :developer %>
+    <%= f.label "profile_photo" %>
+    <%= f.file_field :avatar %>
     <%= f.button :submit %> 
 <% end %>

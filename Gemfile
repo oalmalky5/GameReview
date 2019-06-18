@@ -27,21 +27,25 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-#simple form gem
+# simple form gem
 gem 'simple_form', '~> 4.1'
-#bootstrap sass for styling
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
-#authintication gem
+# bootstrap sass for styling
+gem 'bootstrap', '~> 4.3.1'
+# authintication gem
 gem 'devise', '~> 4.6', '>= 4.6.2'
+# paperclip gem for displaying images of the added games in the index file
+gem 'paperclip', '~> 6.1'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

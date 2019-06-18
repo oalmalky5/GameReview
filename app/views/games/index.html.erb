@@ -1,5 +1,25 @@
+<h1 class="current-genre"> <%= params[:genre] %></h1>
+<% if @games.count == 0 %>
+    <h1> There are currently no games for this genre </h1>
+<% else %> 
+
+<div class="row my-row">
 <% @games.each do |game| %>
-    <h2><%= link_to game.title, game_path(game) %></h2>
+   
+
+<% if game.avatar.attached? %>
+<div class="card my-card" >
+        <img class="img-fluid" src="<%=(url_for(game.avatar))%>">
+    <div class="card-body">
+        <p class="card-text"><%= game.developer %></p>
+       
+        <button type="button" class="btn btn-primary" > <a class="white-color"href="<%= game_path(game)%>"%><%= game.title%></a></button>
+
+    </div>
+</div>
+
+<% end %>
+<% end %>
+</div>
 <% end %>
 
-<%= link_to "Add Game", new_game_path %>

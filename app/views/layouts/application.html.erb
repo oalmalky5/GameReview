@@ -11,9 +11,42 @@
 
   <body>
 
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <%= link_to "RYG", root_path, class: "navbar-brand"%>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li><%= link_to "Sign Up",  new_user_registration_path, class: "nav-link" %></li>
+      <% if user_signed_in? %>
+        <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
+      <% else %>
+        <li> <%= link_to "Log In", new_user_session_path, class: "nav-link" %></li>
+      <% end %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Genres
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <% Genre.all.each do |genre| %>
+            <%= link_to genre.name, games_path(genre: genre.name), class: "dropdown-item" %>
+        <% end %>
+        </div>
+      </li>
+      <% if user_signed_in? %>
+        <li><%= link_to "Add Game", new_game_path, class: "nav-link" %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+    
     <%= yield %>
+
   </body>
 </html>

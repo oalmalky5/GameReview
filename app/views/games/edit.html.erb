@@ -1,3 +1,10 @@
 <h1>Edit Game</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @game, :html => { :multipart => true  } do |f| %>
+    <%= select_tag(:genre_id, options_for_select(@genres), :prompt => Genre.find(@game.genre_id.to_i).name )%>
+    <%= f.input :title, label: "Game Title" %>
+    <%= f.input :description %>
+    <%= f.input :developer %>
+    <%= f.file_field :avatar %>
+    <%= f.button :submit %> 
+<% end %>
