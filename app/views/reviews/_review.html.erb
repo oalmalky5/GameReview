@@ -1,5 +1,27 @@
+
+
+
+<div class="star-rating" data-score= <%= review.rating %></div>
 <p><%= review.rating %></p>
 <p><%= review.comment %></p>
 
+<% if user_signed_in? %>
+
+    <%if review.user_id == current_user.id %>
+
 <%= link_to "Edit", edit_game_review_path(review.game, review) %>
 <%= link_to "delete", game_review_path(review.game, review), method: :delete, date: { confirm: "Are you sure?" }%>
+
+<% end %>
+
+# <script>
+#     $('.star-rating').raty({
+#         path:'/assests/',
+#         readOnly: true,
+#         score: function() {
+#             return $(this).attr('data-score');
+#         }
+#     });
+# <% end %>
+
+<% end %>

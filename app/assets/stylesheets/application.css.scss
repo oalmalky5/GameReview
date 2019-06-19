@@ -11,14 +11,17 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
+ //= require jquery-star-rating
+
+ 
  @import "bootstrap";
 .white-color{
     color:white
 }
 .game-show{
-    height: 475px;
-    width: 325px;
-}
+    width: 30%;
+    margin: 10px;}
 
 .show{
     display: flex;
@@ -36,4 +39,9 @@
 }
 .my-card img{
     height: 250px;
+}
+
+.com-rev{
+    width: 50%;
+    margin: 20px;
 }
