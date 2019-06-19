@@ -2,33 +2,36 @@
 <div class="show">
         <div class="game-show" class="row">
             <% if @game.avatar.attached? %>
-                <div class="col-sm-4">
+                <div>
                     <img src="<%=(url_for(@game.avatar))%>">
                 </div>
             <% end %>
         </div>
-     <div>
+ <div>
             <h2><%= @game.title %></h2>
             <h3><%= @game.developer %></h3>
             <h4>Genre: <%= @game.genre.name %></h4>
             <p><%= @game.description %></p>
-            <%= link_to "Back", root_path %>
-            <%= link_to "Add Review", new_game_review_path(@game) %>
+            
+            <button type="button" class="btn btn-primary" ><%= link_to "Back", root_path, class: "white-color" %> </button>
+            <button type="button" class="btn btn-primary" ><%= link_to "Add Review", new_game_review_path(@game), class: "white-color" %></button>
+            <hr>
+            <% if user_signed_in?  %>
+            <% if @game.user_id == current_user.id %>
+        
+           <button type="button" class="btn btn-primary" ><%= link_to "Edit", edit_game_path(@game), class: "white-color" %></button>
+               <button type="button" class="btn btn-primary" ><%= link_to "Delete", game_path(@game), class: "white-color", method: :delete, data: { confirm: "Are you sure?" } %></button>
+            <hr>
+        
+            <% end %>
+            <% end %>
+    <% @reviews.each do |review|%>
+        <p><%= review.rating%></p>
+        <p><%= review.comment%></p>
+        <%end%>
 
-
-    <% if user_signed_in?  %>
-    <% if @game.user_id == current_user.id %>
-
-        <%= link_to "Edit", edit_game_path(@game) %>
-        <%= link_to "Delete", game_path(@game), method: :delete, data: { confirm: "Are you sure?" } %>
-
-    <% end %>
-
-     </div>
+   
+    <div> 
+    <%# render template: "reviews/new" %>
+        </div>
 </div>
-
-<div class="com-rev">
-    <%= render @game.reviews %>
-</div>
-
-<% end %>

@@ -7,11 +7,12 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        @review = Review.new(review_params)
-        @review.game_id = @game.id
-        @review.user_id = current_user.id
+        game_id = params[:id]
+        review = Review.new(review_params)
+        review.game_id = game_id
+        review.user_id = current_user.id
 
-        if @review.save
+        if review.save
             redirect_to game_path(@game)
         else
             render 'new'

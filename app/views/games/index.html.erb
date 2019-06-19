@@ -13,7 +13,9 @@
     <div class="card-body">
         <p class="card-text"><%= game.developer %></p>
        
-        <button type="button" class="btn btn-primary" > <a class="white-color"href="<%= game_path(game)%>"%><%= game.title%></a></button>
+        <button type="button" class="btn btn-primary" > 
+        <%= link_to game.title, game_path(game), class: "white-color"%>
+        </button>
 
     </div>
 </div>
