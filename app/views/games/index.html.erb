@@ -3,10 +3,10 @@
     <h1> There are currently no games for this genre </h1>
 <% else %> 
 
+
 <div class="row my-row">
 <% @games.each do |game| %>
    
-
 <% if game.avatar.attached? %>
 <div class="card my-card" >
         <img class="img-fluid" src="<%=(url_for(game.avatar))%>">

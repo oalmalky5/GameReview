@@ -1,0 +1,5 @@
+<p><%= review.rating %></p>
+<p><%= review.comment %></p>
+
+<%= link_to "Edit", edit_game_review_path(review.game, review) %>
+<%= link_to "delete", game_review_path(review.game, review), method: :delete, date: { confirm: "Are you sure?" }%>

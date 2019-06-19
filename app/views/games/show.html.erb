@@ -7,15 +7,16 @@
                 </div>
             <% end %>
         </div>
-            <div>
+     <div>
             <h2><%= @game.title %></h2>
             <h3><%= @game.developer %></h3>
             <h4>Genre: <%= @game.genre.name %></h4>
             <p><%= @game.description %></p>
             <%= link_to "Back", root_path %>
+            <%= link_to "Add Review", new_game_review_path(@game) %>
 
 
-<% if user_signed_in?  %>
+    <% if user_signed_in?  %>
     <% if @game.user_id == current_user.id %>
 
         <%= link_to "Edit", edit_game_path(@game) %>
@@ -23,8 +24,10 @@
 
     <% end %>
 
-        </div>
+     </div>
 </div>
 
-
+<div>
+    <%= render @game.reviews %>
+</div>
 <% end %>
