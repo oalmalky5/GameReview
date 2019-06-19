@@ -6,7 +6,7 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -34,10 +34,8 @@ gem 'bootstrap', '~> 4.3.1'
 # authintication gem
 gem 'devise', '~> 4.6', '>= 4.6.2'
 # paperclip gem for displaying images of the added games in the index file
-gem 'paperclip', '~> 6.1'
 
 # Use ActiveStorage variant
-gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
