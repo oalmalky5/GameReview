@@ -7,9 +7,10 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        game_id = params[:id]
+        
+        gameid = params[:game_id]
         review = Review.new(review_params)
-        review.game_id = game_id
+        review.game_id = gameid
         review.user_id = current_user.id
 
         if review.save

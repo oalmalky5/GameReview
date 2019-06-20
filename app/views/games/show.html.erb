@@ -20,7 +20,7 @@
             <% if @game.user_id == current_user.id %>
         
            <button type="button" class="btn btn-primary" ><%= link_to "Edit", edit_game_path(@game), class: "white-color" %></button>
-               <button type="button" class="btn btn-primary" ><%= link_to "Delete", game_path(@game), class: "white-color", method: :delete, data: { confirm: "Are you sure?" } %></button>
+            <button type="button" class="btn btn-primary" ><%= link_to "Delete", game_path(@game), class: "white-color", method: :delete, data: { confirm: "Are you sure?" } %></button>
             <hr>
         
             <% end %>
@@ -32,6 +32,6 @@
 
    
     <div> 
-    <%# render template: "reviews/new" %>
-        </div>
+        <%= render @game.reviews %>
+    </div>
 </div>

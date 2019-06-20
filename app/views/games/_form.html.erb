@@ -1,3 +1,6 @@
+
+
+
 <%= simple_form_for @game, :html => { :multipart => true  } do |f| %>
     <%= select_tag(:genre_id, options_for_select(@genres), :prompt => "Select Genre") %>
     <%= f.input :title, label: "Game Title" %>
