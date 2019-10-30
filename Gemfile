@@ -32,7 +32,7 @@ gem 'simple_form', '~> 4.1'
 # bootstrap sass for styling
 gem 'bootstrap', '~> 4.3.1'
 # authintication gem
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7'
 # paperclip gem for displaying images of the added games in the index file
 
 # Use ActiveStorage variant
